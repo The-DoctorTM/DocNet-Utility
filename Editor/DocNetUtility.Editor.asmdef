@@ -1,11 +1,12 @@
 {
-    "name": "DocNet",
-    "rootNamespace": "DocNet",
+    "name": "Thedoctortm.Docnetutility.Editor",
+    "rootNamespace": "",
     "references": [
-        "GUID:1491147abca9d7d4bb7105af628b223e",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:ea33d32d75aaba042b38a20b505c1fdf"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,
