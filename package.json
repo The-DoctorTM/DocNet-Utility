@@ -12,5 +12,13 @@
 		"url": "https://github.com/The-DoctorTM",
 		"email": "doctor.developments@gmail.com"
 	},
-	"hideInEditor": false
+	"hideInEditor": false,
+	"samples": [
+		{
+			"displayName" : "Quick Start",
+			"description": "Default implementation for DocNet Utility",
+			"path": "Samples~/DocNet Utility"
+		}
+
+	]
 }
