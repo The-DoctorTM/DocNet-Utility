@@ -1,0 +1,24 @@
+{
+	"name": "com.thedoctortm.docnetutility",
+	"displayName":"DocNet",
+	"version": "0.1.0",
+	"unity": "6000.0",
+	"description": "",
+	"dependencies": {
+		"com.unity.netcode.gameobjects": "2.0.0"
+	},
+	"author": {
+		"name": "TheDoctorTM",
+		"url": "https://github.com/The-DoctorTM",
+		"email": "doctor.developments@gmail.com"
+	},
+	"hideInEditor": false,
+	"samples": [
+		{
+			"displayName" : "Quick Start",
+			"description": "Default implementation for DocNet Utility",
+			"path": "Samples~/DocNet Utility"
+		}
+
+	]
+}
