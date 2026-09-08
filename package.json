@@ -5,7 +5,9 @@
 	"unity": "6000.0",
 	"description": "",
 	"dependencies": {
-		"com.unity.netcode.gameobjects": "2.13.2"
+		"com.unity.netcode.gameobjects": "2.13.2",
+		"com.unity.ugui": "2.6.0"
+		
 	},
 	"author": {
 		"name": "TheDoctorTM",
