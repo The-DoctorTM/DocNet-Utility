@@ -1982,14 +1982,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5441999821727599127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dab324876fa04c4b9c68849a6662d94, type: 3}
+  m_Script: {fileID: 11500000, guid: 02958d587b81999478d366a73e9deb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HostGame
-  _maxPlayerSlider: {fileID: 8650382362865121752}
-  _playerValueTxt: {fileID: 5909158647083803866}
-  _numberOfRoundsSlide: {fileID: 2409726721565641066}
-  _roundsValueTxt: {fileID: 1404802000748732441}
   _friendsOnly: {fileID: 0}
+  _maxPlayerSlider: {fileID: 8650382362865121752}
+  _playerValueTxt: {fileID: 7845430404273876824}
+  _numberOfRoundsSlide: {fileID: 2409726721565641066}
+  _roundsValueTxt: {fileID: 2163512908723388249}
 --- !u!1 &5547289551003930645
 GameObject:
   m_ObjectHideFlags: 0

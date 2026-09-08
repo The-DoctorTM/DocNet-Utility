@@ -145,7 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 463640314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6c7745fc0177a4da81ee06c9653ea5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2977a71f33b98cd4e9a49b533b6ab907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnityNetworkHelper
 --- !u!4 &463640316
@@ -204,15 +204,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 542298639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac29776b0437f3948ab3a36f0c559a7c, type: 3}
+  m_Script: {fileID: 11500000, guid: b52ee31d235e3874cab4f5cfe8f0d242, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BootstrapManager
+  m_EditorClassIdentifier: DocNet::DocNet.BootstrapManager
   defaultSceneToOpen: MainMenuScene
   <mainMenuScene>k__BackingField: MainMenuScene
   <lobbyScene>k__BackingField: LobbyScene
-  <gameplayScenes>k__BackingField:
-  - TestScene
-  <minimumPlayers>k__BackingField: 2
+  <gameplayScenes>k__BackingField: []
+  <minimumPlayers>k__BackingField: 0
   <selectedTransport>k__BackingField: 0
 --- !u!1 &1443685446
 GameObject:
@@ -397,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964501131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60c50a79ff9ba864da8593dd44d1f871, type: 3}
+  m_Script: {fileID: 11500000, guid: e98c061c35fec7d40af4047abdefee96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PTB.Networking.SteamManager
   ShowTopMostFoldoutHeaderGroup: 1
@@ -406,7 +405,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 542298641}
-        m_TargetAssemblyTypeName: Doc.Networking.BootstrapManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: DocNet.BootstrapManager, DocNet
         m_MethodName: GoToDefaultMenu
         m_Mode: 1
         m_Arguments:
@@ -490,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2771823049765862908}
   - component: {fileID: 6406074181564255888}
-  - component: {fileID: 7948341849599237984}
+  - component: {fileID: 6406074181564255889}
   m_Layer: 0
   m_Name: Bootstrap Network Manager
   m_TagString: Untagged
@@ -537,7 +536,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 726853395650235776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b70f1bd85326064280b012316b6e43f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bed9924eee77d84fad1f723fd24f4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PTB.Networking.SessionStateManager
   ShowTopMostFoldoutHeaderGroup: 1
@@ -600,7 +599,7 @@ MonoBehaviour:
   AutoObjectParentSync: 0
   SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &7948341849599237984
+--- !u!114 &6406074181564255889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -609,9 +608,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 942370656831530419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1feeffb6d21ffe438c192b05819ee01, type: 3}
+  m_Script: {fileID: 11500000, guid: 638751cfb7afc804abd90822c289d18b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BootstrapNetworkManager
+  m_EditorClassIdentifier: DocNet::DocNet.BootstrapNetworkManager
   ShowTopMostFoldoutHeaderGroup: 1
   <connectedPlayers>k__BackingField: []
 --- !u!1660057539 &9223372036854775807
