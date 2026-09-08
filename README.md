@@ -1,4 +1,4 @@
-Networking Utility for Unity that handles connecting client via Facepunch Steamworks and Unity Netcode
+Networking Utility for Unity that handles connecting clients via Facepunch Steamworks and Unity Netcode
 
-Requires:
+Uses modified:
 https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.facepunch
