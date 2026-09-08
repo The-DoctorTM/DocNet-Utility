@@ -1,8 +1,9 @@
 {
 	"name": "com.thedoctortm.docnetutility",
 	"displayName":"DocNet",
-	"version": "1.0.0",
-	"unity": "6000.0",
+	"version": "1.0.1",
+	"unity": "6000.6",
+	"unityRelease": "0f1",
 	"description": "",
 	"dependencies": {
 		"com.unity.netcode.gameobjects": "2.13.2",

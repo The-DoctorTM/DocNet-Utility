@@ -10,7 +10,7 @@ namespace DocNet.Menus.Player
     public class PauseMenuUIManager : MonoBehaviour
     {
 
-        [SerializeField] private GameObject _optionsMenu;
+        [SerializeField] protected GameObject _optionsMenu;
 
         #region Events
         private void OnEnable()
@@ -24,15 +24,12 @@ namespace DocNet.Menus.Player
         }
         #endregion
 
-        public void ResumeGame()
+        public virtual void ResumeGame()
         {
-            // if (NetworkManager.Singleton.IsServer) gameObject.transform.root.GetComponent<PlayerNetworkedController>().AskTogglePauseRPC(); // TODO: Make this an event?
-            // if (gameObject.transform.root.GetComponent<PlayerNetworkedController>().hostForcedPause) return;
-            gameObject.SetActive(false);
 
         }
 
-        public void Options()
+        public virtual void Options()
         {
             // GUARD: Prevent nulls
             if (_optionsMenu == null) { Debug.LogWarning($"Options menu is null"); return; }
@@ -40,7 +37,7 @@ namespace DocNet.Menus.Player
 
         }
 
-        public void ReturnToMainMenu()
+        public virtual void ReturnToMainMenu()
         {
             Time.timeScale = 1;
 
@@ -50,7 +47,7 @@ namespace DocNet.Menus.Player
 
         }
 
-        public void QuitGame()
+        public virtual void QuitGame()
         {
             if (SteamManager.Instance.connectedToSteam) NetworkUtilEventManager.OnSteamClientDisconnect?.Invoke();
 
