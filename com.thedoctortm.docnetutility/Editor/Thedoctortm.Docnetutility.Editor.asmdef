@@ -1,0 +1,10 @@
+{
+    "name": "Thedoctortm.Docnetutility.Editor",
+    "references": [
+      "Thedoctortm.Docnetutility"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
