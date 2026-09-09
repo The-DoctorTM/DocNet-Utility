@@ -11,20 +11,20 @@ namespace DocNet.Menus.Game
 {
     public class HostGame : MonoBehaviour
     {
-        private BootstrapNetworkManager _bootstrapNetworkManager => BootstrapNetworkManager.Instance;
+        protected BootstrapNetworkManager _bootstrapNetworkManager => BootstrapNetworkManager.Instance;
 
         [Header("Menu Components")]
-        [SerializeField] private Button _friendsOnly;
+        [SerializeField] protected Button _friendsOnly;
 
         [Header("Max Players")]
-        [SerializeField] private Slider _maxPlayerSlider;
-        [SerializeField] private TextMeshProUGUI _playerValueTxt;
+        [SerializeField] protected Slider _maxPlayerSlider;
+        [SerializeField] protected TextMeshProUGUI _playerValueTxt;
 
         [Header("Max Rounds")]
-        [SerializeField] private Slider _numberOfRoundsSlide;
-        [SerializeField] private TextMeshProUGUI _roundsValueTxt;
+        [SerializeField] protected Slider _numberOfRoundsSlide;
+        [SerializeField] protected TextMeshProUGUI _roundsValueTxt;
 
-        private void Start()
+        protected virtual void Start()
         {
             if (_playerValueTxt != null) _playerValueTxt.text = $"{_maxPlayerSlider.value}/{_maxPlayerSlider.maxValue}";
             if (_roundsValueTxt != null) _roundsValueTxt.text = $"{_numberOfRoundsSlide.value}/{_numberOfRoundsSlide.maxValue}";
@@ -34,7 +34,7 @@ namespace DocNet.Menus.Game
 
         }
 
-        public void CreateLobby()
+        public virtual void CreateLobby()
         {
             if (_maxPlayerSlider == null) { Debug.LogError($"Player count slider is null!"); return; }
             if (_numberOfRoundsSlide == null) { Debug.LogError($"Number of rounds slider is null!"); return; }

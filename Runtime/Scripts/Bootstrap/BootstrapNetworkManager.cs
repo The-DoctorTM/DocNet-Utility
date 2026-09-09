@@ -23,11 +23,11 @@ namespace DocNet
         public SessionStateManager sessionStateManager => SessionStateManager.Instance;
         #endregion
 
-        public LobbyInfo lobbyData { get; private set; }
+        public LobbyInfo lobbyData { get; protected set; }
 
-        [field: SerializeField, DictionaryDisplay(keyLabel = "Client ID", valueLabel = "Steam ID")] public Dictionary<ulong, ulong> connectedPlayers { get; private set; } = new();
+        [field: SerializeField, DictionaryDisplay(keyLabel = "Client ID", valueLabel = "Steam ID")] public Dictionary<ulong, ulong> connectedPlayers { get; protected set; } = new();
 
-        private void Awake()
+        protected virtual void Awake()
         {
             #region Singleton
             if (Instance == null)
@@ -53,14 +53,14 @@ namespace DocNet
         #region Change Scene
 
         #region SERVER
-        public void ChangeNetworkScene(string sceneToLoad, string sceneToClose)
+        public virtual void ChangeNetworkScene(string sceneToLoad, string sceneToClose)
         {
             List<string> sceneList = new List<string> { sceneToClose };
             ChangeNetworkScene(sceneToLoad, sceneList);
 
         }
 
-        public void ChangeNetworkScene(string sceneToLoad, List<string> scenesToClose)
+        public virtual void ChangeNetworkScene(string sceneToLoad, List<string> scenesToClose)
         {
             if (!IsSceneInBuildSettings(sceneToLoad) || string.IsNullOrEmpty(sceneToLoad))
             {
@@ -91,7 +91,7 @@ namespace DocNet
         #region CLIENT 
 
         [Rpc(SendTo.ClientsAndHost)]
-        private void CloseSceneObserverRPC(string scenesToClose)
+        protected virtual void CloseSceneObserverRPC(string scenesToClose)
         {
             SceneManager.UnloadSceneAsync(scenesToClose);
 
@@ -102,17 +102,9 @@ namespace DocNet
 
         #region Return To Lobby
         [Rpc(SendTo.Server)]
-        public void ReturnToLobbyRPC()
+        public virtual void ReturnToLobbyRPC()
         {
             ChangeNetworkScene(BootstrapManager.Instance.lobbyScene, BootstrapManager.Instance.gameplayScenes);
-            Invoke(nameof(OpenLobbyMenuClientRPC), 0.1f);
-
-        }
-
-        [Rpc(SendTo.ClientsAndHost)]
-        private void OpenLobbyMenuClientRPC()
-        {
-            // NetworkUtilEventManager.OnStartUnityClient?.Invoke();
 
         }
 
@@ -148,7 +140,7 @@ namespace DocNet
         #endregion
 
         #region Player Tracking
-        public void RegisterPlayer(ulong clientId, ulong steamId = default)
+        public virtual void RegisterPlayer(ulong clientId, ulong steamId = default)
         {
             if (connectedPlayers.ContainsKey(clientId))
             {
@@ -165,7 +157,7 @@ namespace DocNet
 
         }
 
-        public void RemovePlayer(ulong clientId)
+        public virtual void RemovePlayer(ulong clientId)
         {
             if (!connectedPlayers.ContainsKey(clientId)) { Debug.LogWarning($"Player: {clientId} is not in the list"); return; }
             connectedPlayers.Remove(clientId);

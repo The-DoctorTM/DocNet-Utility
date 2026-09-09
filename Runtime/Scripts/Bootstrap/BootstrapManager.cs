@@ -16,25 +16,23 @@ namespace DocNet
         #endregion
 
         [Header("Default Menu")]
-        [SerializeField] private string defaultSceneToOpen = "MainMenuScene";
+        [SerializeField] protected string defaultSceneToOpen = "MainMenuScene";
 
         [field: Header("Game Scenes")]
-        [field: SerializeField] public string mainMenuScene { get; private set; }
-        [field: SerializeField] public string lobbyScene { get; private set; }
-        [field: SerializeField] public List<string> gameplayScenes { get; private set; }
-
+        [field: SerializeField] public string mainMenuScene { get; protected set; }
+        [field: SerializeField] public string lobbyScene { get; protected set; }
+        [field: SerializeField] public List<string> gameplayScenes { get; protected set; }
 
         [Header("Lobby Settings")]
-        [field: SerializeField] public int minimumPlayers { get; private set; }
-
+        [field: SerializeField] public int minimumPlayers { get; protected set; }
 
         [field: Header("Transports")]
-        [field: SerializeField] public Transport selectedTransport { get; private set; } = Transport.Facepunch;
+        [field: SerializeField] public Transport selectedTransport { get; protected set; } = Transport.Facepunch;
 
         // INFO: Debugging
-        private UnityTransport _unityTransport = null;
+        protected UnityTransport _unityTransport = null;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             #region Singleton
             if (Instance == null)
@@ -51,7 +49,7 @@ namespace DocNet
             #endregion
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             Application.targetFrameRate = 60; // INFO: Fixes High GPU Usage
 
@@ -60,7 +58,7 @@ namespace DocNet
 
         }
 
-        public void GoToDefaultMenu()
+        public virtual void GoToDefaultMenu()
         {
             SceneManager.LoadScene(defaultSceneToOpen, LoadSceneMode.Additive);
 
